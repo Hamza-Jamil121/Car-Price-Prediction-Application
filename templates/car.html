@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="yes" name="apple-mobile-web-app-capable"/>
+	<meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Bank-Note-Authentication</title>
+<style>
+body {
+  font-family: Arial;
+}
+
+
+div.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.header{
+background-color:#f4511e;
+    height: 130px;
+}
+.header h3{
+color: white;
+ 
+    line-height: 1.375em;
+    
+    font-weight: bolder;
+	text-align:center;
+	padding-top:20px;
+}
+.header p{
+color: white;
+padding-right: 10px;
+    text-align: center;
+    padding-left: 10px;
+    font-weight: bold;
+ 
+}
+.footer{
+background-color:#f4511e;
+margin-top:10px;
+height:80px;
+text-align: center;
+    padding-top: 19px;
+	font-size:30px;
+	color:white;
+}
+a.fa.fa-linkedin {
+    color: white;
+    /* margin-left: -64px; */
+}
+
+a.fa.fa-github {
+    color: white;
+    /* margin-left: -64px; */
+}
+
+h2{
+text-align: center;
+    color: #f4511e;
+}
+.cret{
+text-decoration: none;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+
+input#first,select#resea {
+	border-radius: 3px;
+    border: 2px solid #f4511e;
+    width: 100%;
+    height: 28px;
+    font-size: 25px;
+    /* margin-top: -24px; */
+    max-width: 600px;
+    margin: auto;
+    display: block;
+    height: 56px;
+}
+
+h3 {
+    color: #f4511e;
+    text-align: center;
+    padding-bottom: -15px;
+}
+
+/*select#resea {
+    width: 25%;
+    height: 33px;
+    border-radius: 3px;
+    border: 2px solid #f4511e;
+    
+    margin-left: 486px;
+   
+}*/
+button#sub{
+	margin-left: 0px;
+	width: 100%;
+	height: 56px;
+	background-color: #f4511e;
+	border-color: #f4511e;
+	color: #fff;
+	font-size: 18px;
+	max-width: 300px;
+	margin: auto;
+	display: block;
+	margin-top: 10px;
+}
+
+
+
+@media (max-width: 767px){	
+	form input, form select{
+		width: 100% !important;
+		margin-left: 0px !important;
+		height: 56px !important;
+		display: block;
+		margin-top: 10px;
+		max-width: 550px;
+		margin: auto !important;
+	}
+
+
+}
+</style>
+</head>
+<body>
+<div class='header'>
+<h3 >Car Price Prediction Application By Using Machine Learning </h3>
+<p >Artifical Intelligence play most important role in the the field of  Finance.Artificial Intelligence is to make computers more useful in solving problematic in Finance area.AI play most important role to predict the future</p>
+
+</p>
+</div>
+
+<div class="container">
+   <form action="{{ url_for('predict')}}" method="post">
+            <h2>Predictive analysis</h2>
+            <h3>Year</h3>
+            <input id="first" name="Year" type="number " placeholder='Enter Number'>
+            <h3>What is the Showroom Price?(In lakhs)</h3><br><input id="first" name="Present_Price" required="required" placeholder='Enter Number'>
+            <h3>How Many Kilometers Drived?</h3><input id="first" name="Kms_Driven" required="required" placeholder='Enter Number'>
+            <h3>How much owners previously had the car(0 or 1 or 3) ?</h3><br><input id="first" name="Owner" required="required" placeholder='Enter Number'>
+            <h3>What Is the Fuel type?</h3><br><select name="Fuel_Type_Petrol" id="resea" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Diesel">CNG</option>
+            </select>
+            <h3>Are you A Dealer or Individual</h3><br><select name="Seller_Type_Individual" id="resea" required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+            <h3>Transmission type</h3><br><select name="Transmission_Mannual" id="resea" required="required">
+                <option value="Mannual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+            </select>
+            <br><br><button id="sub" type="submit ">Calculate the Selling Price</button>
+            <br>
+
+
+
+
+        </form>
+
+  <h2>
+  {{ prediction_text }}
+  </h2>
+</div>
+<div class='footer'>
+<a href="https://www.linkedin.com/in/syed-hamza-jamil-rock12/" class="fa fa-linkedin"></a>
+<a href="https://github.com/Hamza-Jamil121/Bank-Note-Authentication" class="fa fa-github"></a><br>
+<a href='#' class='cret'> Developed By: Syed Hamza</a>
+</div>
+
+</body>
+</html>
